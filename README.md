@@ -4,7 +4,7 @@ This is a site for creating notes with [Nextra](https://nextra.site).
 
 ## Local Development
 
-This application requires Node.js v16+.
+This application requires Node.js v18+.
 
 ```
 pnpm install
