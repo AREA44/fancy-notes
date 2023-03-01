@@ -1,0 +1,6 @@
+{
+  "installCommand": "pnpm install",
+  "github": {
+    "silent": true
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "extends": ["config:base"],
+  "dependencyDashboard": false,
+  "labels": ["renovate"],
+  "automerge": true,
+  "rangeStrategy": "bump",
+  "schedule": ["before 3am on Monday"]
+}

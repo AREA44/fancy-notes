@@ -1,0 +1,48 @@
+# Batch convert .doc format files to .docx with VBA code
+
+## Step by step
+
+This section is going to show you the VBA code to convert all `.doc` format documents in a specified folder to `.docx` documents at once. Please do as follows.
+
+1. Please collect all `.doc` format documents you will convert to `.docx` in a specified folder.
+
+2. Open Word and press the `Alt` + `F11` key to open the Microsoft Visual Basic for Applications window.
+
+3. In the window, click `Insert` > `Module`. Then copy below VBA code into the Module window.
+
+```bat copy
+Sub ConvertDocToDocx()
+'Updated by ExtendOffice 20181128
+    Dim xDlg As FileDialog
+    Dim xFolder As Variant
+    Dim xFileName As String
+    Application.ScreenUpdating = False
+    Set xDlg = Application.FileDialog(msoFileDialogFolderPicker)
+    If xDlg.Show <> -1 Then Exit Sub
+    xFolder = xDlg.SelectedItems(1) + "\"
+    xFileName = Dir(xFolder & "*.doc", vbNormal)
+    While xFileName <> ""
+        Documents.Open FileName:=xFolder & xFileName, _
+            ConfirmConversions:=False, ReadOnly:=False, AddToRecentFiles:=False, _
+            PasswordDocument:="", PasswordTemplate:="", Revert:=False, _
+            WritePasswordDocument:="", WritePasswordTemplate:="", Format:= _
+            wdOpenFormatAuto, XMLTransform:=""
+        ActiveDocument.SaveAs xFolder & Replace(xFileName, "doc", "docx"), wdFormatDocumentDefault
+        ActiveDocument.Close
+        xFileName = Dir()
+    Wend
+    Application.ScreenUpdating = True
+End Sub
+```
+
+![Screenshot](/assets/230302_0215/01.png)
+
+4. Press the `F5` key to run the code. In the opening Browse window, select the folder contains the `.doc` format documents and click OK. See screenshot:
+
+![Screenshot](/assets/230302_0215/02.png)
+
+Then all `.doc` format documents are converted to .docx documents immediately.
+
+## Resources
+
+1. https://www.extendoffice.com/documents/word/5601-word-batch-convert-doc-to-docx.html
