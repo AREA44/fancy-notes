@@ -7,17 +7,17 @@ const config: DocsThemeConfig = {
   },
   docsRepositoryBase: "https://github.com/AREA44/fancy-note",
   useNextSeoProps() {
-    return {
-      titleTemplate: "%s | Fancy Notes",
-    };
+    const { asPath } = useRouter();
+    if (asPath !== "/") {
+      return {
+        titleTemplate: "%s | Fancy Notes",
+      };
+    }
   },
   logo: <span>Fancy Notes</span>,
   head: function useHead() {
-    const { asPath, defaultLocale, locale } = useRouter();
-    const { frontMatter } = useConfig();
-    const url =
-      "https://fancy-note.vercel.app" +
-      (defaultLocale === locale ? asPath : `/${locale}${asPath}`);
+    const { title } = useConfig();
+    const socialCard = "https://fancy-notes.vercel.app/og.svg";
 
     return (
       <>
@@ -25,18 +25,22 @@ const config: DocsThemeConfig = {
         <meta name="theme-color" content="#fff" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="Content-Language" content="en" />
-        <meta property="og:url" content={url} />
         <meta
-          property="og:title"
-          content={frontMatter.title || "Fancy Notes"}
+          name="description"
+          content="Fany notes about all kinds of interesting topics."
         />
         <meta
-          property="og:description"
-          content={
-            frontMatter.description ||
-            "Fany notes about all kinds of interesting topics"
-          }
+          name="og:description"
+          content="Fany notes about all kinds of interesting topics."
         />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={socialCard} />
+        <meta name="twitter:url" content="https://fancy-notes.vercel.app" />
+        <meta
+          name="og:title"
+          content={title ? title + " | Fancy Notes" : "Fancy Notes"}
+        />
+        <meta name="og:image" content={socialCard} />
         <meta name="apple-mobile-web-app-title" content="Fancy Notes" />
         <link rel="icon" href="/favicon.ico" type="image/png" />
       </>
