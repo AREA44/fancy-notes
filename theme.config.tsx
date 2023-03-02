@@ -17,7 +17,11 @@ const config: DocsThemeConfig = {
   logo: <span>Fancy Notes</span>,
   head: function useHead() {
     const { title } = useConfig();
-    const socialCard = "https://fancy-notes.vercel.app/og.svg";
+    const { route } = useRouter();
+    const socialCard =
+      route === "/" || !title
+        ? "https://fancy-notes.vercel.app/og.svg"
+        : `https://fancy-notes.vercel.app/api/og?title=${title}`;
 
     return (
       <>
