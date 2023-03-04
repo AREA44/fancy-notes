@@ -5,7 +5,9 @@
 Here are the simple steps to download view-only protected PDF from Google Drive using Chrome browser:
 
 1. Open the PDF file on your Chrome Browser. Let the file load completely and scroll to the bottom of the page.
+   ![Steps to download restricted Google Drive PDF](/assets/230304_2057/01.png)
 2. Now open `Developer Console` by pressing `Ctrl`+ `Shift` + `C` (`F12`) for Windows or `Cmd` + `Shift` + `C` for Mac. Then click on `Console` tab.
+   ![Steps to download restricted Google Drive PDF](/assets/230304_2057/02.png)
 3. Now paste the this script in the `Developer Console` and hit `Enter`.
 
 ```js copy
@@ -34,23 +36,22 @@ jspdf.onload = function () {
 jspdf.src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js";
 document.body.appendChild(jspdf);
 ```
+   ![Steps to download restricted Google Drive PDF](/assets/230304_2057/03.png)
 
 4. When everything has done, the PDF file will be downloaded.
-
-<video src="/assets/230304_2057/Download-protected-view-only-PDF-from-Google-Drive.mp4" controls="controls" style="max-width: 730px;">
-</video>
+   ![Steps to download restricted Google Drive PDF](/assets/230304_2057/04.png)
 
 ## Advanced medthod
 
 The simple JS method works for simple PDF files, but if you wish to download large PDF files with complex orientation in high quality, then the simple JS code may not work that great, here you can try this advanced trick to save the download protected Google Drive PDF.
 
 1. Download [Google Drive PDF Downloader](https://github.com/zeltox/Google-Drive-PDF-Downloader/archive/refs/heads/master.zip) file and extract the content. Open `Method_1_Script.js`. Then copy the script into `Developer Console` and press `Enter`.
-   ![Steps to download restricted Google Drive PDF](/assets/230304_2057/01.png)
+   ![Steps to download restricted Google Drive PDF](/assets/230304_2057/05.png)
 2. After few seconds the browser will prompt you to save a file with extension `*.PDF_DataFile"`. Save this file and copy it into the `Input` directory which is inside the folder you downloaded earlier.
-   ![Steps to download restricted Google Drive PDF](/assets/230304_2057/02.png)
-   ![Steps to download restricted Google Drive PDF](/assets/230304_2057/03.png)
+   ![Steps to download restricted Google Drive PDF](/assets/230304_2057/06.png)
+   ![Steps to download restricted Google Drive PDF](/assets/230304_2057/07.png)
 3. If you are using Windows then navigate to `Windows` folder and double click on `GeneratePDF.cmd`. If you are using Linux then navigate to `Linux` folder and execute `GeneratePDF`.
-   ![Steps to download restricted Google Drive PDF](/assets/230304_2057/04.png)
+   ![Steps to download restricted Google Drive PDF](/assets/230304_2057/08.png)
 4. A successful message will be shown once the whole process completes. Navigate to the `Output` folder and enjoy.
 
 > You can use `Method_2_Script.js` only for PDF with less than 20 pages, if you experience any errors or slow down then follow `Method_1_Script.js`
