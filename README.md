@@ -1,6 +1,6 @@
 # Fancy Notes
 
-This is a site for creating notes with [Nextra](https://nextra.site).
+This is a site for collecting useful notes about anything you are finding
 
 ## Local Development
 

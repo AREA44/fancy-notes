@@ -5,7 +5,7 @@ const config: DocsThemeConfig = {
   project: {
     link: "https://github.com/AREA44/fancy-note",
   },
-  docsRepositoryBase: "https://github.com/AREA44/fancy-note",
+  docsRepositoryBase: "https://github.com/AREA44/fancy-notes",
   useNextSeoProps() {
     const { asPath } = useRouter();
     if (asPath !== "/") {
