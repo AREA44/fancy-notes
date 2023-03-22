@@ -47,6 +47,11 @@ const config: DocsThemeConfig = {
         <meta name="og:image" content={socialCard} />
         <meta name="apple-mobile-web-app-title" content="Fancy Notes" />
         <link rel="icon" href="/favicon.ico" type="image/png" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2837724975096238"
+          crossorigin="anonymous"
+        ></script>
       </>
     );
   },
