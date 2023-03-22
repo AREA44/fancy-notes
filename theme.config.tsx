@@ -31,11 +31,11 @@ const config: DocsThemeConfig = {
         <meta httpEquiv="Content-Language" content="en" />
         <meta
           name="description"
-          content="Fany notes about all kinds of interesting topics."
+          content="Fancy notes about all kinds of interesting topics."
         />
         <meta
           name="og:description"
-          content="Fany notes about all kinds of interesting topics."
+          content="Fancy notes about all kinds of interesting topics."
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={socialCard} />
