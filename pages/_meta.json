@@ -1,5 +1,7 @@
 {
-  "index": "Welcome to Fancy Notes",
+  "index": {
+    "title": "Welcome to Fancy Notes"
+  },
   "230302_0215": "Batch convert .doc format files to .docx with VBA code",
   "230304_2057": "Steps to download restricted Google Drive PDF"
 }
