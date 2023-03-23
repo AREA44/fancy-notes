@@ -1,8 +1,8 @@
 # Fancy Notes
 
-This is a site for collecting useful notes about anything you are finding
+This is a site for collecting useful notes about anything you are finding.
 
-## Local Development
+## Local development
 
 This application requires Node.js v18+.
 
