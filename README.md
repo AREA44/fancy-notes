@@ -1,6 +1,9 @@
-# Fancy Notes
+![banner](./public/og.svg)
 
-This is a site for collecting useful notes about anything you are finding.
+<p align="center">
+  <b>Fancy Notes</b> - An open-source site collects useful notes about anything you are finding.</br>
+  Built with <a href="https://nextra.site">Nextra</a>
+</p>
 
 ## Local development
 

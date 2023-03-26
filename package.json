@@ -1,6 +1,6 @@
 {
   "name": "@area44/fancy-notes",
-  "version": "23.03.23",
+  "version": "23.03.27",
   "description": "Fany notes about all kinds of interesting topics",
   "scripts": {
     "dev": "next dev",
@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "@types/node": "^18.14.6",
+    "prettier": "2.8.6",
     "typescript": "^5.0.0"
   }
 }
