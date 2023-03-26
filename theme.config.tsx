@@ -1,27 +1,27 @@
-import { DocsThemeConfig, useConfig } from "nextra-theme-docs";
-import { useRouter } from "next/router";
+import { DocsThemeConfig, useConfig } from 'nextra-theme-docs'
+import { useRouter } from 'next/router'
 
 const config: DocsThemeConfig = {
   project: {
-    link: "https://github.com/AREA44/fancy-note",
+    link: 'https://github.com/AREA44/fancy-note'
   },
-  docsRepositoryBase: "https://github.com/AREA44/fancy-notes",
+  docsRepositoryBase: 'https://github.com/AREA44/fancy-notes',
   useNextSeoProps() {
-    const { asPath } = useRouter();
-    if (asPath !== "/") {
+    const { asPath } = useRouter()
+    if (asPath !== '/') {
       return {
-        titleTemplate: "%s | Fancy Notes",
-      };
+        titleTemplate: '%s | Fancy Notes'
+      }
     }
   },
   logo: <span>Fancy Notes</span>,
   head: function useHead() {
-    const { title } = useConfig();
-    const { route } = useRouter();
+    const { title } = useConfig()
+    const { route } = useRouter()
     const socialCard =
-      route === "/" || !title
-        ? "https://fancy-notes.vercel.app/og.svg"
-        : `https://fancy-notes.vercel.app/api/og?title=${title}`;
+      route === '/' || !title
+        ? 'https://fancy-notes.vercel.app/og.svg'
+        : `https://fancy-notes.vercel.app/api/og?title=${title}`
 
     return (
       <>
@@ -42,7 +42,7 @@ const config: DocsThemeConfig = {
         <meta name="twitter:url" content="https://fancy-notes.vercel.app" />
         <meta
           name="og:title"
-          content={title ? title + " | Fancy Notes" : "Fancy Notes"}
+          content={title ? title + ' | Fancy Notes' : 'Fancy Notes'}
         />
         <meta name="og:image" content={socialCard} />
         <meta name="apple-mobile-web-app-title" content="Fancy Notes" />
@@ -53,23 +53,23 @@ const config: DocsThemeConfig = {
           crossOrigin="anonymous"
         ></script>
       </>
-    );
+    )
   },
   navigation: {
     prev: false,
-    next: false,
+    next: false
   },
   footer: {
     text: (
       <span>
-        MIT {new Date().getFullYear()} ©{" "}
+        MIT {new Date().getFullYear()} ©{' '}
         <a href="https://fancy-notes.vercel.app" target="_blank">
           Fancy Notes
         </a>
         .
       </span>
-    ),
-  },
-};
+    )
+  }
+}
 
-export default config;
+export default config

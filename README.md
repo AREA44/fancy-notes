@@ -2,7 +2,7 @@
 
 <p align="center">
   <b>Fancy Notes</b> - An open-source site collects useful notes about anything you are finding.</br>
-  Built with <a href="https://nextra.site">Nextra</a>
+  Built with <a href="https://nextra.site">Nextra</a>.
 </p>
 
 ## Local development
