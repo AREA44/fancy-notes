@@ -1,0 +1,14 @@
+# Git - Tips & Tricks
+
+## Cleanup unnecessary files and optimize the local repository
+
+The following commands can be used to reduce the size of a git repository:
+
+```bash copy
+git reflog expire --all --expire=now
+git gc --prune=now --aggressive
+```
+
+## Resources
+
+1. https://education.github.com/git-cheat-sheet-education.pdf
