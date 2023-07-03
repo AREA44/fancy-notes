@@ -1,30 +1,6 @@
 {
-  "extends": ["config:base"],
+  "extends": ["config:base", ":dependencyDashboardApproval"],
   "dependencyDashboard": true,
   "labels": ["renovate"],
-  "automerge": false,
-  "schedule": ["before 3am on Monday"],
-  "packageRules": [
-    {
-      "groupName": "nextra",
-      "labels": ["nextra"],
-      "matchPackageNames": ["nextra"],
-      "matchPackagePatterns": ["^nextra"],
-      "automerge": false
-    },
-    {
-      "groupName": "typescript",
-      "labels": ["typescript"],
-      "matchPackageNames": ["typescript"],
-      "matchPackagePatterns": ["^@types"],
-      "automerge": true
-    },
-    {
-      "groupName": "formatting & linting",
-      "labels": ["linting"],
-      "matchPackageNames": ["eslint", "prettier"],
-      "matchPackagePatterns": ["^eslint"],
-      "automerge": true
-    }
-  ]
+  "automerge": true
 }
