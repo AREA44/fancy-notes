@@ -1,12 +1,12 @@
 {
   "name": "@area44/fancy-notes",
-  "version": "23.5.17",
+  "version": "23.7.31",
   "description": "Fany notes about all kinds of interesting topics",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "format": "prettier -w ."
+    "format": "prettier -w . --cache"
   },
   "repository": {
     "type": "git",
@@ -30,7 +30,7 @@
     "@types/node": "^20.1.4",
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
-    "prettier": "3.0.0",
+    "prettier": "^3.0.0",
     "typescript": "^5.0.4"
   },
   "packageManager": "pnpm@8.6.11"
