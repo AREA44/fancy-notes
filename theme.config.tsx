@@ -1,27 +1,27 @@
-import { DocsThemeConfig, useConfig } from 'nextra-theme-docs'
-import { useRouter } from 'next/router'
+import { DocsThemeConfig, useConfig } from 'nextra-theme-docs';
+import { useRouter } from 'next/router';
 
 const config: DocsThemeConfig = {
   project: {
-    link: 'https://github.com/AREA44/fancy-note'
+    link: 'https://github.com/AREA44/fancy-note',
   },
   docsRepositoryBase: 'https://github.com/AREA44/fancy-notes',
   useNextSeoProps() {
-    const { asPath } = useRouter()
+    const { asPath } = useRouter();
     if (asPath !== '/') {
       return {
-        titleTemplate: '%s | Fancy Notes'
-      }
+        titleTemplate: '%s | Fancy Notes',
+      };
     }
   },
   logo: <span>Fancy Notes</span>,
   head: function useHead() {
-    const { title } = useConfig()
-    const { route } = useRouter()
+    const { title } = useConfig();
+    const { route } = useRouter();
     const socialCard =
       route === '/' || !title
         ? 'https://fancy-notes.vercel.app/og.svg'
-        : `https://fancy-notes.vercel.app/api/og?title=${title}`
+        : `https://fancy-notes.vercel.app/api/og?title=${title}`;
 
     return (
       <>
@@ -53,11 +53,11 @@ const config: DocsThemeConfig = {
           crossOrigin="anonymous"
         ></script>
       </>
-    )
+    );
   },
   navigation: {
     prev: false,
-    next: false
+    next: false,
   },
   footer: {
     text: (
@@ -68,8 +68,8 @@ const config: DocsThemeConfig = {
         </a>
         .
       </span>
-    )
-  }
-}
+    ),
+  },
+};
 
-export default config
+export default config;

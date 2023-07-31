@@ -1,18 +1,18 @@
 /* eslint-env node */
-import { ImageResponse } from '@vercel/og'
+import { ImageResponse } from '@vercel/og';
 
 export const config = {
-  runtime: 'edge'
-}
+  runtime: 'edge',
+};
 
-export default async function (req) {
-  const { searchParams } = new URL(req.url)
+export default async function (req: { url: string | URL }) {
+  const { searchParams } = new URL(req.url);
 
   // ?title=<title>
-  const hasTitle = searchParams.has('title')
+  const hasTitle = searchParams.has('title');
   const title = hasTitle
     ? searchParams.get('title')?.slice(0, 100)
-    : 'Fancy Notes'
+    : 'Fancy Notes';
 
   return new ImageResponse(
     (
@@ -25,7 +25,7 @@ export default async function (req) {
           justifyContent: 'center',
           letterSpacing: '-.02em',
           fontWeight: 700,
-          background: 'white'
+          background: 'white',
         }}
       >
         <div
@@ -34,20 +34,20 @@ export default async function (req) {
             top: 42,
             position: 'absolute',
             display: 'flex',
-            alignItems: 'center'
+            alignItems: 'center',
           }}
         >
           <span
             style={{
               width: 24,
               height: 24,
-              background: 'black'
+              background: 'black',
             }}
           />
           <span
             style={{
               marginLeft: 8,
-              fontSize: 20
+              fontSize: 20,
             }}
           >
             Fancy Notes
@@ -66,7 +66,7 @@ export default async function (req) {
             textAlign: 'center',
             backgroundColor: 'black',
             color: 'white',
-            lineHeight: 1.4
+            lineHeight: 1.4,
           }}
         >
           {title}
@@ -75,7 +75,7 @@ export default async function (req) {
     ),
     {
       width: 1200,
-      height: 600
-    }
-  )
+      height: 600,
+    },
+  );
 }

@@ -6,6 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
     "format": "prettier -w . --cache"
   },
   "repository": {
@@ -20,9 +22,9 @@
   "homepage": "https://github.com/AREA44/fancy-notes#readme",
   "dependencies": {
     "@vercel/og": "^0.5.4",
-    "next": "^13.4.2",
-    "nextra": "^2.5.2",
-    "nextra-theme-docs": "^2.5.2",
+    "next": "^13.4.12",
+    "nextra": "^2.10.0",
+    "nextra-theme-docs": "^2.10.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -30,8 +32,12 @@
     "@types/node": "^20.1.4",
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
+    "eslint": "^8.45.0",
+    "eslint-config-next": "^13.4.12",
+    "eslint-config-prettier": "^8.9.0",
+    "eslint-plugin-react": "^7.33.0",
     "prettier": "^3.0.0",
-    "typescript": "^5.0.4"
+    "typescript": "^5.1.6"
   },
   "packageManager": "pnpm@8.6.11"
 }

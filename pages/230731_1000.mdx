@@ -1,280 +1,107 @@
 # Regular Expression Syntax Cheat Sheet
 
+Regular expressions (regex or regexp) are a pattern of characters that describe an amount of text.
+
 ## Anchors
 
 Anchors match a position before or after other characters.
 
-| **Syntax** | **Description**                                              | **Example pattern** | **Example matches**          | **Example non-matches** |
-| ---------- | ------------------------------------------------------------ | ------------------- | ---------------------------- | ----------------------- |
-| `^`        | match start of line                                          | `^r`                | rabbit
-raccoon              | parrot
-
-ferret          |
-| `$`        | match end of line                                            | `t$`                | rabbit
-
-foot                 | trap
-
-star              |
-| `\A`       | match start of line                                          | `\Ar`               | rabbit
-
-raccoon              | parrot
-
-ferret          |
-| `\Z`       | match end of line                                            | `t\Z`               | rabbit
-
-foot                 | trap
-
-star              |
-| `\b`       | match characters at the start or end of a word               | `\bfox\b`           | the red fox ran
-
-the fox ate | foxtrot
-
-foxskin scarf  |
-| `\B`       | match characters in the middle of other non-space characters | `\Bee\B`            | trees
-
-beef                  | bee
-
-tree               |
+| **Syntax** | **Description**                                              | **Example pattern** | **Example matches**                 | **Example non-matches**   |
+| ---------- | ------------------------------------------------------------ | ------------------- | ----------------------------------- | ------------------------- |
+| `^`        | match start of line                                          | `^r`                | `r`abbit<br/>`r`accoon              | parrot<br/>ferret         |
+| `$`        | match end of line                                            | `t$`                | rabbi`t`<br/>foo`t`                 | trap<br/>star             |
+| `\A`       | match start of line                                          | `\Ar`               | `r`abbit<br/>`r`accoon              | parrot<br/>ferret         |
+| `\Z`       | match end of line                                            | `t\Z`               | rabbi`t`<br/>foo`t`                 | trap<br/>star             |
+| `\b`       | match characters at the start or end of a word               | `\bfox\b`           | the red `fox` ran<br/>the `fox` ate | foxtrot<br/>foxskin scarf |
+| `\B`       | match characters in the middle of other non-space characters | `\Bee\B`            | tr`ee`s<br/>b`ee`f                  | bee<br/>tree              |
 
 ## Matching types of character
 
 Rather than matching specific characters, you can match specific types of characters such as letters, numbers, and more.
 
-| **Syntax**       | **Description**                                      | **Example pattern** | **Example matches**            | **Example non-matches**      |
-| ---------------- | ---------------------------------------------------- | ------------------- | ------------------------------ | ---------------------------- |
-| `.`              | Anything except for a linebreak                      | `c.e`               | clean
-
-cheap                   | acert
-
-cent                  |
-| `\d`             | match a digit                                        | `\d`                | 6060\-842
-
-2b|^2b              | two
-
-\*\*___                 |
-| `\D`             | Match a non-digit                                    | `\D`                | The 5 cats ate<br>12 Angry men | 52
-
-10032                    |
-| `\w`             | Match word characters                                | `\wee\w`            | trees
-
-bee4                    | The bee
-
-eels eat meat       |
-| `\W`             | Match non-word characters                            | `\Wbat\W`           | At bat
-
-Swing the bat fast     | wombat
-
-bat53                |
-| `\s`             | Match whitespace                                     | `\sfox\s`           | the fox ate
-
-his fox ran       | it’s the fox.
-
-foxfur        |
-| `\S`             | Match non-whitespace                                 | `\See\S`            | trees
-
-beef                    | the bee stung
-
-The tall tree |
-| `\metacharacter` | Escape a metacharacter to match on the metacharacter | `\.`
-
-`\^`          | The cat ate.
-
-2^3              | the cat ate
-
-23              |
+| **Syntax**       | **Description**                                      | **Example pattern** | **Example matches**                   | **Example non-matches**         |
+| ---------------- | ---------------------------------------------------- | ------------------- | ------------------------------------- | ------------------------------- |
+| `.`              | Anything except for a linebreak                      | `c.e`               | `cle`an<br/>`che`ap                   | acert<br/>cent                  |
+| `\d`             | match a digit                                        | `\d`                | `6060`-`842`<br/>`2`b&#x007C;^`2`b    | two<br/>`**___`                 |
+| `\D`             | Match a non-digit                                    | `\D`                | `The` 5 `cats ate`<br/>12 `Angry men` | 52<br/>10032                    |
+| `\w`             | Match word characters                                | `\wee\w`            | tr`ees`<br/>b`ee4`                    | The bee<br/>eels eat meat       |
+| `\W`             | Match non-word characters                            | `\Wbat\W`           | At `bat`<br/>Swing the `bat` fast     | wombat<br/>bat53                |
+| `\s`             | Match whitespace                                     | `\sfox\s`           | the `fox` ate<br/>his `fox` ran       | it's the fox.<br/>foxfur        |
+| `\S`             | Match non-whitespace                                 | `\See\S`            | tr`ees`<br/>`beef`                    | the bee stung<br/>The tall tree |
+| `\metacharacter` | Escape a metacharacter to match on the metacharacter | `\.`<br/>`\^`       | The cat ate`.`<br/>2`^`3              | the cat ate<br/>23              |
 
 ## Character classes
 
 Character classes are sets or ranges of characters.
 
-| **Syntax** | **Description**                                 | **Example pattern** | **Example matches** | **Example non-matches** |
-| ---------- | ----------------------------------------------- | ------------------- | ------------------- | ----------------------- |
-| `[xy]`     | match several characters                        | `gr[ea]y`           | gray
-
-grey          | green
-
-greek            |
-| `[x-y]`    | match a range of characters                     | `[a-e]`             | amber
-
-brand        | fox
-
-join               |
-| `[^xy]`    | Does not match several characters               | `gr[^ea]y`          | green
-
-greek        | gray
-
-grey              |
-| `[\^-]`    | match metacharacters inside the character class | `4[\^\.-+*/]\d`     | 4^3
-
-4.2            | 44
-
-23|
+| **Syntax** | **Description**                                 | **Example pattern** | **Example matches**       | **Example non-matches** |
+| ---------- | ----------------------------------------------- | ------------------- | ------------------------- | ----------------------- |
+| `[xy]`     | match several characters                        | `gr[ea]y`           | `gray`<br/>`grey`         | green<br/>greek         |
+| `[x-y]`    | match a range of characters                     | `[a-e]`             | `a`m`be`r<br/>`b`r`a`n`d` | fox<br/>join            |
+| `[^xy]`    | Does not match several characters               | `gr[^ea]y`          | `green`<br/>`greek`       | gray <br/>grey          |
+| `[\^-]`    | match metacharacters inside the character class | `4[\^\.-+*/]\d`     | `4^3` <br/>`4.2`          | 44 <br/>23              |
 
 ## Repetition
 
 Rather than matching single instances of characters, you can match repeated characters.
 
-| **Syntax**       | **Description**                                                | **Example pattern** | **Example matches** | **Example non-matches** |
-| ---------------- | -------------------------------------------------------------- | ------------------- | ------------------- | ----------------------- |
-| `x*`             | match zero or more times                                       | `ar*o`              | cacao
-
-carrot       | arugula
-
-artichoke      |
-| `x+`             | match one or more times                                        | `re+`               | green 
-
-tree        | trap
-
-ruined            |
-| `x?`             | Match zero or one times                                        | `ro?a`              | roast
-
-rant         | root
-
-rear              |
-| `x{m}`           | match m times                                                  | `\we{2}\w`          | deer
-
-seer          | red
-
-enter              |
-| `x{m,}`          | match m or more times                                          | `2{3,}4`            | 671-2224
-
-2222224   | 224
-
-123                |
-| `x{m,n}`         | match between m and n times                                    | `12{1,3}3`          | 1234
-
-1222384       | 15335
-
-1222223          |
-| `x*?, x+?, etc.` | match the minimum number of times - known as a lazy quantifier | `re+?`              | tree
-
-freeeee       | trout
-
-roasted          |
+| **Syntax**       | **Description**                                                | **Example pattern** | **Example matches**      | **Example non-matches** |
+| ---------------- | -------------------------------------------------------------- | ------------------- | ------------------------ | ----------------------- |
+| `x*`             | match zero or more times                                       | `ar*o`              | cac`ao`<br/>c`arro`t     | arugula<br/>artichoke   |
+| `x+`             | match one or more times                                        | `re+`               | g`ree`n<br/>t`ree`       | trap<br/>ruined         |
+| `x?`             | Match zero or one times                                        | `ro?a`              | `roa`st<br/>`ra`nt       | root<br/>rear           |
+| `x{m}`           | match m times                                                  | `\we{2}\w`          | `deer`<br/>`seer`        | red<br/>enter           |
+| `x{m,}`          | match m or more times                                          | `2{3,}4`            | 671-`2224`<br/>`2222224` | 224<br/>123             |
+| `x{m,n}`         | match between m and n times                                    | `12{1,3}3`          | `123`4<br/>`12223`84     | 15335<br/>1222223       |
+| `x*?, x+?, etc.` | match the minimum number of times - known as a lazy quantifier | `re+?`              | t`re`e<br/>f`re`eeee     | trout<br/>roasted       |
 
 ## Capturing, alternation & backreferences
 
 In order to extract specific parts of a string, you can capture those parts, and even name the parts that you captured.
 
-| **Syntax**   | **Description**                                                      | **Example pattern**            | **Example matches**              | **Example non-matches** |
-| ------------ | -------------------------------------------------------------------- | ------------------------------ | -------------------------------- | ----------------------- |
-| `(x)`        | capturing a pattern                                                  | `(iss)+`                       | Mississippi
-
-missed              | mist
-
-persist           |
-| `(?:x)`      | create a group without capturing                                     | `(?:ab)(cd)`                   | Match: abcd
-
-Group 1: cd         | acbd                    |
-| `(?<name>x)` | create a named capture group                                         | `(?<first>\d)(?<scrond>\d)\d*` | Match: 1325
-
-first: 1
-
-second: 3 | 2
-
-hello                |
-| `(x|y)`      | match several alternative patterns                                   | `(re|ba)`                      | red
-
-banter                      | rant
-
-bear              |
-| `\n`         | reference previous captures where n is the group index starting at 1 | `(b)(\w*)\1`                   | blob
-
-bribe                      | bear
-
-bring             |
-| `\k<name>`   | reference named captures                                             | `(?<first>5)(\d*)\k<first>`    | 51245
-
-55                        | 523
-
-51                 |
+| **Syntax**              | **Description**                                                      | **Example pattern**            | **Example matches**                      | **Example non-matches** |
+| ----------------------- | -------------------------------------------------------------------- | ------------------------------ | ---------------------------------------- | ----------------------- |
+| `(x)`                   | capturing a pattern                                                  | `(iss)+`                       | M`ississi`ppi<br/>mi`ss`ed               | mist<br/>persist        |
+| `(?:x)`                 | create a group without capturing                                     | `(?:ab)(cd)`                   | Match:<br/>`abcd`<br/>Group 1: `cd`      | acbd                    |
+| `(?<name>x)`            | create a named capture group                                         | `(?<first>\d)(?<scrond>\d)\d*` | Match: `1325`<br/>first: 1<br/>second: 3 | 2<br/>hello             |
+| <code>(x&#124;y)</code> | match several alternative patterns                                   | <code>(re&#124;ba)</code>      | `re`d<br/>`ba`nter                       | rant<br/>bear           |
+| `\n`                    | reference previous captures where n is the group index starting at 1 | `(b)(\w*)\1`                   | `blob`<br/>`brib`e                       | bear<br/>bring          |
+| `\k<name>`              | reference named captures                                             | `(?<first>5)(\d*)\k<first>`    | `51245`<br/>`55`                         | 523<br/>51              |
 
 ## Lookahead
 
 You can specify that specific characters must appear before or after you match, without including those characters in the match.
 
-| **Syntax** | **Description**                                                           | **Example pattern**      | **Example matches** | **Example non-matches** |
-| ---------- | ------------------------------------------------------------------------- | ------------------------ | ------------------- | ----------------------- |
-| `(?=x)`    | looks ahead at the next characters without using them in the match        | `an(?=an)`
-
-`iss(?=ipp)` | banana
-
-Mississippi | band
-
-missed            |
-| `(?!x)`    | looks ahead at next characters to not match on                            | `ai(?!n)`                | fail
-
-brail         | faint
-
-train            |
-| `(?<=x)`   | looks at previous characters for a match without using those in the match | `(?<=tr)a`               | trail
-
-translate    | bear
-
-streak            |
-| `(?<!x)`   | looks at previous characters to not match on                              | `(?!tr)a`                | bear
-
-translate     | trail
-
-strained         |
+| **Syntax** | **Description**                                                           | **Example pattern**          | **Example matches**        | **Example non-matches** |
+| ---------- | ------------------------------------------------------------------------- | ---------------------------- | -------------------------- | ----------------------- |
+| `(?=x)`    | looks ahead at the next characters without using them in the match        | `an(?=an)` <br/>`iss(?=ipp)` | b`an`ana<br/>Miss`issi`ppi | band<br/>missed         |
+| `(?!x)`    | looks ahead at next characters to not match on                            | `ai(?!n)`                    | f`ai`l<br/>br`ai`l         | faint<br/>train         |
+| `(?<=x)`   | looks at previous characters for a match without using those in the match | `(?<=tr)a`                   | tr`a`il<br/>tr`a`nslate    | bear<br/>streak         |
+| `(?<!x)`   | looks at previous characters to not match on                              | `(?!tr)a`                    | be`a`r<br/>tr`a`nslate     | trail<br/>strained      |
 
 ## Literal matches and modifiers
 
 Modifiers are settings that change the way the matching rules work.
 
-| **Syntax**    | **Description**                                                                                                    | **Example pattern**                   | **Example matches**                 | **Example non-matches**               |
-| ------------- | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------- | ----------------------------------- | ------------------------------------- |
-| `\Qx\E`       | match start to finish                                                                                              | `\Qtell\E`
-
-`\Q\d\E`                  | tell
-
-\\d                           | I’ll tell you this
-
-I have 5 coins    |
-| `(?i)x(?-i).` | set the regex string to case-insensitive                                                                           | `(?i)te(?-i)`                         | sTep
-
-tEach                         | Trench
-
-bear                          |
-| `(?x)x(?-x)`  | regex ignores whitespace                                                                                           | `(?x)t a p(?-x)`                      | tap
-
-tapdance                       | c a t
-
-rot a potato                   |
-| `(?s)x(?-s)`  | turns on single-line/DOTALL mode which makes the “.” include new-line symbols (\\n) in addition to everything else | `(?s)first and second(?-s) and third` | first and
-
-Second and third         | first and
-
-second 
-
-and third         |
-| `(?m)x(?-m)`  | Changes ^ and $ to be end of line rather than end of string                                                        | `^eat and sleep$`                     | eat and sleep
-
-<br>
-
-eat and
-
-sleep | treat and sleep
-
-<br>
-
-eat and sleep. |
+| **Syntax**    | **Description**                                                                                                    | **Example pattern**                   | **Example matches**                       | **Example non-matches**               |
+| ------------- | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------- | ----------------------------------------- | ------------------------------------- |
+| `\Qx\E`       | match start to finish                                                                                              | `\Qtell\E`<br/>`\Q\d\E`               | `tell`<br/>`\\d`                          | I'll tell you this<br/>I have 5 coins |
+| `(?i)x(?-i).` | set the regex string to case-insensitive                                                                           | `(?i)te(?-i)`                         | s`T`ep<br/>`tE`ach                        | Trench<br/>bear                       |
+| `(?x)x(?-x)`  | regex ignores whitespace                                                                                           | `(?x)t a p(?-x)`                      | `tap`<br/>`tap`dance                      | c a t<br/>rot a potato                |
+| `(?s)x(?-s)`  | turns on single-line/DOTALL mode which makes the “.” include new-line symbols (\\n) in addition to everything else | `(?s)first and second(?-s) and third` | `first and`<br/>`Second and third`        | first and<br/>second<br/>and third    |
+| `(?m)x(?-m)`  | changes ^ and $ to be end of line rather than end of string                                                        | `^eat and sleep$`                     | `eat and sleep`<br/>`eat and`<br/>`sleep` | treat and sleep<br/>eat and sleep.    |
 
 ## Unicode
 
 Regular expressions can work beyond the Roman alphabet, with things like Chinese characters or emoji.
 
-- Code Points: The hexadecimal number used to represent an abstract character in a system like unicode. 
+- Code Points: The hexadecimal number used to represent an abstract character in a system like unicode.
 - Graphemes: Is either a codepoint or a character. All characters are made up of one or more graphemes in a sequence.
 
-| **Syntax** | **Description**                                   | **Example pattern**      | **Example matches**     | **Example non-matches** |
-| ---------- | ------------------------------------------------- | ------------------------ | ----------------------- | ----------------------- |
-| `\X`       | match graphemes                                   | `\u0000gmail`            | @gmail
-
-www.email@gmail | gmail
-
-@aol             |
-| `\X\X`     | Match special characters like ones with an accent | `\u00e8 or \u0065\u0300` | è                       | e                       |
+| **Syntax** | **Description**                                   | **Example pattern**      | **Example matches**            | **Example non-matches** |
+| ---------- | ------------------------------------------------- | ------------------------ | ------------------------------ | ----------------------- |
+| `\X`       | match graphemes                                   | `\u0000gmail`            | `@gmail`<br/>www.email`@gmail` | gmail<br/>@aol          |
+| `\X\X`     | match special characters like ones with an accent | `\u00e8 or \u0065\u0300` | `è`                            | e                       |
 
 ## Resources
 
