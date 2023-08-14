@@ -1,18 +1,18 @@
 /* eslint-env node */
-import { ImageResponse } from '@vercel/og';
+import { ImageResponse } from '@vercel/og'
 
 export const config = {
   runtime: 'edge',
-};
+}
 
 export default async function (req: { url: string | URL }) {
-  const { searchParams } = new URL(req.url);
+  const { searchParams } = new URL(req.url)
 
   // ?title=<title>
-  const hasTitle = searchParams.has('title');
+  const hasTitle = searchParams.has('title')
   const title = hasTitle
     ? searchParams.get('title')?.slice(0, 100)
-    : 'Fancy Notes';
+    : 'Fancy Notes'
 
   return new ImageResponse(
     (
@@ -77,5 +77,5 @@ export default async function (req: { url: string | URL }) {
       width: 1200,
       height: 600,
     },
-  );
+  )
 }
