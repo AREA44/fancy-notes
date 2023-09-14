@@ -21,7 +21,7 @@ Visit live at [localhost:3000](http://localhost:3000).
 To add a new post
 
 1. Create a new MDX file in the `pages` directory.
-2. Define how the pages are shown in the sidebar via the `_meta.json` file. For more details, refer to the [Nextra docs](https://nextra.site/docs/docs-theme/page-configuration)
+2. Define how the pages are shown in the sidebar via the `_meta.json` file. For more details, refer to the [Nextra docs](https://nextra.site/docs/docs-theme/page-configuration).
 
 ## License
 
