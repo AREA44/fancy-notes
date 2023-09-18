@@ -1,3 +1,5 @@
+import { Callout } from 'nextra/components'
+
 # Git - Tips & Tricks
 
 ## Start a new git repository
@@ -42,9 +44,13 @@ curl "https://api.github.com/$CNTX/OWNER/repos?page=$PAGE&per_page=100" |
   xargs -L1 git clone
 ```
 
-> Set `CNTX=users`, to download all your repositories or set `CNTX=orgs`, to download all repositories of your organization.
+<Callout>
+  Set `CNTX=users`, to download all your repositories or set `CNTX=orgs`, to download all repositories of your organization.
+</Callout>
 
-> The maximum page-size is 100, so you have to call this several times with the right page number to get all your repositories (set PAGE to the desired page number you want to download).
+<Callout>
+  The maximum page-size is 100, so you have to call this several times with the right page number to get all your repositories (set PAGE to the desired page number you want to download).
+</Callout>
 
 ## Resources
 
