@@ -5,7 +5,7 @@ export const config = {
   runtime: 'edge',
 }
 
-export default async function (req: { url: string | URL }) {
+export default async function OG (req: { url: string | URL }) {
   const { searchParams } = new URL(req.url)
 
   // ?title=<title>

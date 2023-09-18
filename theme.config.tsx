@@ -17,7 +17,6 @@ const config: DocsThemeConfig = {
   toc: {
     float: true,
     backToTop: true,
-    extraContent: ExtraContent,
   },
   logo: <span>Fancy Notes</span>,
   head: function useHead() {
