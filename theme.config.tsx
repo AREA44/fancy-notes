@@ -66,9 +66,9 @@ const config: DocsThemeConfig = {
   footer: {
     text: (
       <span>
-        MIT {new Date().getFullYear()} ©{' '}
-        <a href="https://fancy-notes.vercel.app" target="_blank">
-          Fancy Notes
+        {new Date().getFullYear()} ©{' '}
+        <a href="https://github.com/AREA44" target="_blank">
+          AREA44
         </a>
         .
       </span>
