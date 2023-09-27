@@ -71,7 +71,7 @@ const config: DocsThemeConfig = {
       <div className="flex justify-between gap-4 w-full text-sm">
         <span>Copyright © {new Date().getFullYear()}</span>
         <p>
-          Made by
+          Made by{' '}
           <a
             className="underline underline-offset-4"
             target="_blank"
