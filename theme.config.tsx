@@ -18,7 +18,10 @@ const config: DocsThemeConfig = {
     float: true,
     backToTop: true,
   },
-  logo: <span>Fancy Notes</span>,
+  sidebar: {
+    toggleButton: true,
+  },
+  logo: <span className="hidden font-bold sm:inline-block">Fancy Notes</span>,
   head: function useHead() {
     const { title } = useConfig()
     const { route } = useRouter()
@@ -65,13 +68,21 @@ const config: DocsThemeConfig = {
   },
   footer: {
     text: (
-      <span>
-        {new Date().getFullYear()} ©{' '}
-        <a href="https://github.com/AREA44" target="_blank">
-          AREA44
-        </a>
-        .
-      </span>
+      <div className="flex justify-between gap-4 w-full text-sm">
+        <span>Copyright © {new Date().getFullYear()}</span>
+        <p>
+          Made by{' '}
+          <a
+            className="underline underline-offset-4"
+            target="_blank"
+            rel="noreferrer"
+            href="https://github.com/AREA44"
+          >
+            AREA44
+          </a>
+          .
+        </p>
+      </div>
     ),
   },
 }
