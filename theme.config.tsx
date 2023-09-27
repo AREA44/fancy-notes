@@ -21,7 +21,7 @@ const config: DocsThemeConfig = {
   sidebar: {
     toggleButton: true,
   },
-  logo: <span>Fancy Notes</span>,
+  logo: <span className="hidden font-bold sm:inline-block">Fancy Notes</span>,
   head: function useHead() {
     const { title } = useConfig()
     const { route } = useRouter()
