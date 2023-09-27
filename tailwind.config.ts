@@ -1,4 +1,4 @@
-import { Config } from 'tailwindcss';
+import { Config } from 'tailwindcss'
 
 const config: Config = {
   content: [
@@ -6,12 +6,12 @@ const config: Config = {
     './components/**/*.{js,jsx,ts,tsx,md,mdx}',
 
     // Or if using `src` directory:
-    './src/**/*.{js,jsx,ts,tsx,md,mdx}'
+    './src/**/*.{js,jsx,ts,tsx,md,mdx}',
   ],
   theme: {
-    extend: {}
+    extend: {},
   },
-  plugins: []
-};
+  plugins: [],
+}
 
-export default config;
+export default config
