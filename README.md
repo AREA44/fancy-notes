@@ -46,4 +46,3 @@ We appreciate your contributions!
 ## License
 
 Fancy Notes is released under the [MIT License](LICENSE).
-
