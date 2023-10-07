@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 
 const config: DocsThemeConfig = {
   project: {
-    link: 'https://github.com/AREA44/fancy-note',
+    link: 'https://github.com/AREA44/fancy-notes',
   },
   docsRepositoryBase: 'https://github.com/AREA44/fancy-notes',
   useNextSeoProps() {
