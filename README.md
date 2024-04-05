@@ -11,8 +11,8 @@ Fancy Notes is built using [Nextra](https://nextra.site) - a simple, powerful an
 ```bash
 git clone --depth=1 https://github.com/AREA44/fancy-notes
 cd fancy-notes
-pnpm install
-pnpm dev
+bun install
+bun dev
 ```
 
 Now the site live at http://localhost:3000

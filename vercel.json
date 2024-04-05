@@ -1,5 +1,5 @@
 {
-  "installCommand": "pnpm install",
+  "installCommand": "bun install",
   "github": {
     "silent": true
   }
