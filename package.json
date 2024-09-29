@@ -13,12 +13,12 @@
   "license": "MIT",
   "author": "AREA44",
   "scripts": {
-    "build": "bun --bun next build",
-    "dev": "bun --bun next dev",
+    "build": "next build",
+    "dev": "next dev",
     "format": "prettier -w . --cache",
-    "lint": "bun --bun next lint",
-    "lint:fix": "bun --bun next lint --fix",
-    "start": "bun --bun next start"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "start": "next start"
   },
   "dependencies": {
     "@vercel/og": "^0.6.3",
