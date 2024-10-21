@@ -23,7 +23,7 @@
   "dependencies": {
     "@vercel/og": "^0.6.3",
     "autoprefixer": "^10.4.20",
-    "next": "^14.2.15",
+    "next": "^15.0.0",
     "nextra": "^3.0.15",
     "nextra-theme-docs": "^3.0.15",
     "postcss": "^8.4.47",
@@ -36,7 +36,7 @@
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.1",
     "eslint": "^9.13.0",
-    "eslint-config-next": "^14.2.15",
+    "eslint-config-next": "^15.0.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react": "^7.37.1",
     "prettier": "^3.3.3",
