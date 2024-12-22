@@ -23,20 +23,20 @@
   "dependencies": {
     "@vercel/og": "^0.6.4",
     "autoprefixer": "^10.4.20",
-    "next": "^15.1.0",
-    "nextra": "^3.2.5",
-    "nextra-theme-docs": "^3.2.5",
+    "next": "^15.1.2",
+    "nextra": "^3.3.0",
+    "nextra-theme-docs": "^3.3.0",
     "postcss": "^8.4.49",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tailwindcss": "^3.4.16"
+    "tailwindcss": "^3.4.17"
   },
   "devDependencies": {
     "@types/node": "^22.10.2",
-    "@types/react": "^19.0.1",
+    "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
     "eslint": "^9.17.0",
-    "eslint-config-next": "^15.1.0",
+    "eslint-config-next": "^15.1.2",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react": "^7.37.2",
     "prettier": "^3.4.2",
