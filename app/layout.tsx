@@ -50,8 +50,9 @@ export default async function RootLayout({ children }) {
         <Layout
           navbar={navbar}
           pageMap={await getPageMap()}
-          docsRepositoryBase="https://github.com/AREA44/fancy-notes"
+          docsRepositoryBase="https://github.com/AREA44/fancy-notes/tree/main/content"
           footer={footer}
+          sidebar={{ defaultMenuCollapseLevel: 1 }}
         >
           {children}
         </Layout>
