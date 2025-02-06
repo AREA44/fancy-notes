@@ -22,7 +22,7 @@ Rather than matching specific characters, you can match specific types of charac
 | **Syntax**       | **Description**                                      | **Example pattern** | **Example matches**                           | **Example non-matches**         |
 | ---------------- | ---------------------------------------------------- | ------------------- | --------------------------------------------- | ------------------------------- |
 | `.`              | Anything except for a linebreak                      | `c.e`               | `cle`an<br/>`che`ap                           | acert<br/>cent                  |
-| `\d`             | match a digit                                        | `\d`                | `6060`-`842`<br/>`2`b<code>&#124;</code>^`2`b | two<br/>**___                   |
+| `\d`             | match a digit                                        | `\d`                | `6060`-`842`<br/>`2`b<code>&#124;</code>^`2`b | two<br/>\*\*\_\_\_              |
 | `\D`             | Match a non-digit                                    | `\D`                | `The` 5 `cats ate`<br/>12 `Angry men`         | 52<br/>10032                    |
 | `\w`             | Match word characters                                | `\wee\w`            | tr`ees`<br/>b`ee4`                            | The bee<br/>eels eat meat       |
 | `\W`             | Match non-word characters                            | `\Wbat\W`           | At `bat`<br/>Swing the `bat` fast             | wombat<br/>bat53                |
