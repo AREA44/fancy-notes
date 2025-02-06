@@ -16,6 +16,7 @@
     "build": "next build",
     "dev": "next --turbopack",
     "start": "next start",
+    "postbuild": "pagefind --site .next/server/app --output-path out/_pagefind",
     "format": "biome format --write ."
   },
   "dependencies": {
