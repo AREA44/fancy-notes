@@ -1,7 +1,7 @@
 import { Footer, Layout, Navbar } from "nextra-theme-docs";
 import { Head } from "nextra/components";
 import { getPageMap } from "nextra/page-map";
-import './globals.css'
+import "./globals.css";
 
 export const metadata = {
   // Define your metadata here
@@ -18,11 +18,7 @@ const footer = <Footer>MIT {new Date().getFullYear()} © AREA44.</Footer>;
 
 export default async function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      dir="ltr"
-      suppressHydrationWarning
-    >
+    <html lang="en" dir="ltr" suppressHydrationWarning>
       <Head
       // ... Your additional head options
       >
