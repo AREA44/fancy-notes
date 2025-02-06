@@ -1,5 +1,9 @@
 import nextra from "nextra";
 
-const withNextra = nextra({});
+const withNextra = nextra({
+  search: {
+    codeblocks: false,
+  },
+});
 
-export default withNextra({});
+export default withNextra({ reactStrictMode: true });
