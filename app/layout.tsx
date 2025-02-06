@@ -14,7 +14,7 @@ const navbar = (
     // ... Your additional navbar options
   />
 );
-const footer = <Footer>MIT {new Date().getFullYear()} © Nextra.</Footer>;
+const footer = <Footer>MIT {new Date().getFullYear()} © AREA44.</Footer>;
 
 export default async function RootLayout({ children }) {
   return (
