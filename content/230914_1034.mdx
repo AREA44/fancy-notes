@@ -1,0 +1,36 @@
+import { Callout } from 'nextra/components'
+
+# Download Videos and MP3s from YouTube
+
+## Requirements
+
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp)
+- [ffmpeg](https://ffmpeg.org)
+
+<Callout type="info">
+  Make sure you have `yt-dlp` and `ffmpeg` installed before executing the commands.
+  `yt-dlp` is a powerful command-line tool that offers additional features compared to the traditional YouTube downloader.
+  `ffmpeg` is required for the audio extraction and conversion process.
+</Callout>
+
+## Download a video from YouTube
+
+To download a video from YouTube, use the following command:
+
+```bash
+yt-dlp <YouTube video URL>
+```
+
+## Download an MP3 from YouTube
+
+To download an MP3 from YouTube, use the following command:
+
+```bash
+yt-dlp --extract-audio --audio-format mp3 <YouTube video URL>
+```
+
+<Callout>
+  Replace `<YouTube video URL>` with the URL of the YouTube video you want to download the MP3 from.
+</Callout>
+
+Once the download is complete, you will find the video or MP3 file in your current directory or the default download directory set by `yt-dlp`.
