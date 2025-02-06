@@ -1,51 +1,46 @@
 import { Footer, Layout, Navbar } from "nextra-theme-docs";
-import type { Metadata } from 'next'
+import type { Metadata } from "next";
 import { Head } from "nextra/components";
 import { getPageMap } from "nextra/page-map";
 import "./globals.css";
 
 export const metadata: Metadata = {
   // For more information on metadata API, see: https://nextjs.org/docs/app/building-your-application/optimizing/metadata
-  description: 'Fancy notes about all kinds of interesting topics.',
-  metadataBase: new URL('https://fancy-notes.vercel.app'),
-  generator: 'Next.js',
-  applicationName: 'Fancy Notes',
+  description: "Fancy notes about all kinds of interesting topics.",
+  metadataBase: new URL("https://fancy-notes.vercel.app"),
+  generator: "Next.js",
+  applicationName: "Fancy Notes",
   appleWebApp: {
-    title: 'Fancy Notes'
+    title: "Fancy Notes",
   },
   title: {
-    default: 'Fancy Notes - All kinds of interesting topics.',
-    template: '%s | Fancy Notes'
+    default: "Fancy Notes - All kinds of interesting topics.",
+    template: "%s | Fancy Notes",
   },
   openGraph: {
-    url: './',
-    siteName: 'Fancy Notes',
-    locale: 'en_US',
-    type: 'website'
+    url: "./",
+    siteName: "Fancy Notes",
+    locale: "en_US",
+    type: "website",
   },
   other: {
-    'msapplication-TileColor': '#fff'
+    "msapplication-TileColor": "#fff",
   },
   twitter: {
-    site: 'https://fancy-notes.vercel.app'
+    site: "https://fancy-notes.vercel.app",
   },
   alternates: {
-    canonical: './'
-  }
-}
+    canonical: "./",
+  },
+};
 
 const logo = (
   <span className="hidden font-bold sm:inline-block">Fancy Notes</span>
-)
+);
 
 const footer = <Footer>MIT {new Date().getFullYear()} © AREA44.</Footer>;
 
-
-const navbar = (
-  <Navbar
-    logo={logo}
-  />
-);
+const navbar = <Navbar logo={logo} />;
 
 export default async function RootLayout({ children }) {
   return (
