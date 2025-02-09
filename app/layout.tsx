@@ -17,20 +17,20 @@ export const metadata: Metadata = {
     default: "Fancy Notes - All kinds of interesting topics.",
     template: "%s | Fancy Notes",
   },
+  icons: {
+    icon: "/favicon.ico",
+  },
   openGraph: {
-    url: "./",
     siteName: "Fancy Notes",
     locale: "en_US",
     type: "website",
   },
-  other: {
-    "msapplication-TileColor": "#fff",
-  },
   twitter: {
     site: "https://fancy-notes.vercel.app",
+    card: "summary_large_image",
   },
-  alternates: {
-    canonical: "./",
+  other: {
+    "msapplication-TileColor": "#fff",
   },
 };
 
@@ -52,7 +52,6 @@ export default async function RootLayout({ children }) {
           pageMap={await getPageMap()}
           docsRepositoryBase="https://github.com/AREA44/fancy-notes/tree/main"
           footer={footer}
-          sidebar={{ defaultMenuCollapseLevel: 1 }}
         >
           {children}
         </Layout>
