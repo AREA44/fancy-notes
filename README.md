@@ -21,13 +21,11 @@ Now the site live at http://localhost:3000
 
 To create a new note in Fancy Notes, follow these steps:
 
-1. Navigate to the `pages` directory in the project's root folder.
+1. Navigate to the `content` directory in the project's root folder.
 2. Create a new `.mdx` file with a unique name for your note.
 3. Open the newly created file in a text editor of your choice.
 4. Add your note content using MDX syntax. All images, videos, etc should be save in the `public` directory.
 5. Don't forget to save the file once you've finished adding your note content.
-
-For better organization and metadata management, don't forget to edit the corresponding `_meta.json` file in the `pages` directory. This file allows you to specify additional information about your note, such as title, categories, tags, and other relevant metadata.
 
 Once you've created and saved your note, it will be available for viewing and searching within the Fancy Notes website.
 
