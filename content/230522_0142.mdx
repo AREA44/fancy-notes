@@ -1,62 +1,86 @@
 import { Callout } from "nextra/components";
 
-# Git - Tips & Tricks
+# Git – Tips & Tricks
 
-## Start a new git repository
+## 🆕 Start a New Git Repository
 
-To create a new repository on the command line:
+Initialize and push a new Git repository:
 
 ```bash copy
-git init
-git add .
-git commit -m "first commit"
-git branch -M main
+git init                        # Initialize a new repo
+git add .                       # Stage all files
+git commit -m "first commit"    # Initial commit
+git branch -M main              # Rename branch to main
 git remote add origin https://github.com/OWNER/REPOSITORY
-git push -u origin main
-```
+git push -u origin main         # Push to remote main
+````
 
-## Changing a remote repository's URL
+---
 
-The command changes an existing remote repository URL:
+## 🔗 Change the Remote Repository URL
+
+Update an existing remote URL:
 
 ```bash copy
 git remote set-url origin https://github.com/OWNER/REPOSITORY
 ```
 
-## Cleanup unnecessary files and optimize the local repository
+---
 
-The following commands can be used to reduce the size of a git repository:
+## 🧹 Cleanup & Optimize a Git Repository
+
+Free up space and optimize Git internals:
 
 ```bash copy
 git reflog expire --all --expire=now
 git gc --prune=now --aggressive
 ```
 
-## Clone all repos at once from GitHub
+---
 
-On **Windows** and all **UNIX/LINUX** systems, using **Git Bash** with this script:
+## 🧬 Clone All GitHub Repositories (User or Org)
+
+Works on **Windows**, **macOS**, or **Linux** using **Git Bash**:
 
 ```bash copy
 CNTX={users|orgs}; PAGE=1
 curl "https://api.github.com/$CNTX/OWNER/repos?page=$PAGE&per_page=100" |
-  grep -e 'clone_url*' |
+  grep -e 'clone_url' |
   cut -d \" -f 4 |
   xargs -L1 git clone
 ```
 
-<Callout>
-  Set `CNTX=users`, to download all your repositories or set `CNTX=orgs`, to
-  download all repositories of your organization.
+<Callout type="info">
+  Set <code>CNTX=users</code> to download your personal repositories, or <code>CNTX=orgs</code> for your organization’s repositories.
 </Callout>
 
-<Callout>
-  The maximum page-size is 100, so you have to call this several times with the
-  right page number to get all your repositories (set PAGE to the desired page
-  number you want to download).
+<Callout type="warning">
+  GitHub API limits results to 100 per page. Increase the <code>PAGE</code> variable to fetch all repositories across multiple pages.
 </Callout>
 
-## Resources
+---
 
-1. https://docs.github.com/en
-1. https://education.github.com/git-cheat-sheet-education.pdf
-1. https://stackoverflow.com/questions/19576742/how-to-clone-all-repos-at-once-from-github
+## 🗑️ Delete a Branch in Git
+
+### Delete a **local** branch:
+
+```bash copy
+git branch -d branch_name      # Safe delete
+git branch -D branch_name      # Force delete (use with caution)
+```
+
+### Delete a **remote** branch:
+
+```bash copy
+git push origin --delete branch_name
+```
+
+This command tells Git to delete the branch from the remote repository (like GitHub or GitLab).
+
+---
+
+## 📚 Resources
+
+* [GitHub Docs](https://docs.github.com/en)
+* [Git Cheat Sheet (PDF)](https://education.github.com/git-cheat-sheet-education.pdf)
+* [Clone All GitHub Repositories](https://stackoverflow.com/questions/19576742/how-to-clone-all-repos-at-once-from-github)
