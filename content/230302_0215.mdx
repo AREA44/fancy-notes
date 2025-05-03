@@ -1,23 +1,23 @@
 import { Steps } from "nextra/components";
 
-# Batch Convert `.doc` Format Files to `.docx` with VBA Code
+# Batch Convert `.doc` Format Files to `.docx` Using VBA Code
 
-## Step by step
+## Step-by-Step Guide
 
-This section is going to show you the VBA code to convert all `.doc` format documents in a specified folder to `.docx` documents at once. Please do as follows.
+In this section, we’ll show you how to use VBA code to batch convert `.doc` files to `.docx` files in a specific folder. Just follow the steps below:
 
 <Steps>
 ### Step 1
 
-Please collect all `.doc` format documents you will convert to `.docx` in a specified folder.
+Gather all the `.doc` files that you want to convert into a single folder.
 
 ### Step 2
 
-Open Word and press the `Alt` + `F11` key to open the Microsoft Visual Basic for Applications window.
+Open Microsoft Word, and press `Alt` + `F11` to open the Microsoft Visual Basic for Applications (VBA) window.
 
 ### Step 3
 
-In the window, click `Insert` > `Module`. Then copy below VBA code into the Module window.
+In the VBA window, click `Insert` > `Module`. Then, copy and paste the following VBA code into the module:
 
 ```bat copy
 Sub ConvertDocToDocx()
@@ -44,15 +44,16 @@ Sub ConvertDocToDocx()
 End Sub
 ```
 
-![Batch convert .doc format files to .docx with VBA code](/assets/230302_0215/01.png)
+![VBA Code](/assets/230302_0215/01.png)
 
 ### Step 4
 
-Press the `F5` key to run the code. In the opening Browse window, select the folder contains the `.doc` format documents and click OK. Then all `.doc` format documents are converted to `.docx` documents immediately.
-![Batch convert .doc format files to .docx with VBA code](/assets/230302_0215/02.png)
+Press the `F5` key to run the code. In the window that appears, select the folder containing your `.doc` files and click **OK**. The script will automatically convert all `.doc` files to `.docx` format.
+
+![Select Folder](/assets/230302_0215/02.png)
 
 </Steps>
 
 ## Resources
 
-1. https://www.extendoffice.com/documents/word/5601-word-batch-convert-doc-to-docx.html
+1. [Batch Convert DOC to DOCX with VBA – ExtendOffice](https://www.extendoffice.com/documents/word/5601-word-batch-convert-doc-to-docx.html)
