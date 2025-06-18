@@ -13,11 +13,13 @@
   "license": "MIT",
   "author": "AREA44",
   "scripts": {
-    "build": "next build",
     "dev": "next --turbopack",
     "start": "next start",
+    "build": "next build",
     "postbuild": "pagefind --site .next/server/app --output-path public/_pagefind",
-    "format": "biome format --write ."
+    "format": "biome format --write .",
+    "lint": "biome lint --write .",
+    "check": "biome check --write ."
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.10",
@@ -31,7 +33,8 @@
     "tailwindcss": "^4.1.10"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
+    "@area44/biome-config": "^2.0.1",
+    "@biomejs/biome": "^2.0.0",
     "@types/node": "^22.15.31",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
