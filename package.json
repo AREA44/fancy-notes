@@ -13,11 +13,13 @@
   "license": "MIT",
   "author": "AREA44",
   "scripts": {
-    "build": "next build",
     "dev": "next --turbopack",
     "start": "next start",
+    "build": "next build",
     "postbuild": "pagefind --site .next/server/app --output-path public/_pagefind",
-    "format": "biome format --write ."
+    "format": "biome format --write .",
+    "lint": "biome lint --write .",
+    "check": "biome check --write ."
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.10",
