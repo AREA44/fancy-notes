@@ -36,6 +36,9 @@ importers:
         specifier: ^4.1.10
         version: 4.1.10
     devDependencies:
+      '@area44/biome-config':
+        specifier: ^2.0.1
+        version: 2.0.1
       '@biomejs/biome':
         specifier: ^2.0.0
         version: 2.0.0
@@ -67,6 +70,9 @@ packages:
 
   '@antfu/utils@8.1.0':
     resolution: {integrity: sha512-XPR7Jfwp0FFl/dFYPX8ZjpmU4/1mIXTjnZ1ba48BLMyKOV62/tiRjdsFcPs2hsYcSud4tzk7w3a3LjX8Fu3huA==}
+
+  '@area44/biome-config@2.0.1':
+    resolution: {integrity: sha512-OS+DL+Sw4teLAJBPnHTSSnBxcAJZskWULqMTRbhQcinPAMSac8EBojRTybIX0eZGblJ17EOt/qKickjYPn9GDA==}
 
   '@biomejs/biome@2.0.0':
     resolution: {integrity: sha512-BlUoXEOI/UQTDEj/pVfnkMo8SrZw3oOWBDrXYFT43V7HTkIUDkBRY53IC5Jx1QkZbaB+0ai1wJIfYwp9+qaJTQ==}
@@ -2232,6 +2238,8 @@ snapshots:
       tinyexec: 0.3.2
 
   '@antfu/utils@8.1.0': {}
+
+  '@area44/biome-config@2.0.1': {}
 
   '@biomejs/biome@2.0.0':
     optionalDependencies:
